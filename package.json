@@ -1,7 +1,7 @@
 {
-  "name": "d3-path",
-  "version": "1.0.5",
-  "description": "Serialize Canvas path commands to SVG.",
+  "name": "d3-hpgl",
+  "version": "0.2.0",
+  "description": "Serialize Canvas path commands to HPGL.",
   "keywords": [
     "d3",
     "d3-module",
@@ -11,32 +11,42 @@
     "graphics",
     "CanvasRenderingContext2D",
     "CanvasPathMethods",
-    "Path2D"
+    "Path2D",
+    "HPGL",
+    "HP-GL",
+    "RDGL",
+    "RD-GL",
+    "Plotter"
   ],
-  "homepage": "https://d3js.org/d3-path/",
+  "homepage": "https://github.com/aubergene/d3-hpgl/",
   "license": "BSD-3-Clause",
   "author": {
-    "name": "Mike Bostock",
-    "url": "http://bost.ocks.org/mike"
+    "name": "Julian Burgess",
+    "url": "https://aubergene.com"
   },
-  "main": "build/d3-path.js",
+  "main": "build/d3-hpgl.js",
   "module": "index",
   "jsnext:main": "index",
   "repository": {
     "type": "git",
-    "url": "https://github.com/d3/d3-path.git"
+    "url": "https://github.com/aubergene/d3-hpgl.git"
   },
   "scripts": {
-    "pretest": "rm -rf build && mkdir build && rollup --banner \"$(preamble)\" -f umd -n d3 -o build/d3-path.js -- index.js",
+    "pretest": "rm -rf build && mkdir build && rollup --banner \"$(preamble)\" -f umd -n d3 -o build/d3-hpgl.js -- index.js",
     "test": "tape 'test/**/*-test.js' && eslint index.js src",
-    "prepublish": "npm run test && uglifyjs --preamble \"$(preamble)\" build/d3-path.js -c -m -o build/d3-path.min.js",
-    "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../d3-path/build/d3-path.js d3-path.v1.js && cp ../d3-path/build/d3-path.min.js d3-path.v1.min.js && git add d3-path.v1.js d3-path.v1.min.js && git commit -m \"d3-path ${npm_package_version}\" && git push && cd - && zip -j build/d3-path.zip -- LICENSE README.md build/d3-path.js build/d3-path.min.js"
+    "prepublish": "npm run test && uglifyjs --preamble \"$(preamble)\" build/d3-hpgl.js -c -m -o build/d3-hpgl.min.js",
+    "examples": "node examples/example.js"
   },
   "devDependencies": {
+    "d3-multi-context": "^1.1.0",
+    "d3-path": "^1.0.5",
     "eslint": "3",
     "package-preamble": "0.0",
-    "rollup": "0.41",
+    "rollup": "0.35",
     "tape": "4",
-    "uglify-js": "^2.8.11"
+    "uglify-js": "2"
+  },
+  "dependencies": {
+    "adaptive-bezier-curve": "^1.0.3"
   }
 }
