@@ -15,7 +15,7 @@ function drawCircle(context, radius) {
 
 The d3-hpgl module lets you take this exact code and additionally render to [HPGL](https://en.wikipedia.org/wiki/HPGL). It works by [serializing](#hpgl_toString) [CanvasPathMethods](http://www.w3.org/TR/2dcontext/#canvaspathmethods) calls to HPGL.
 
-Please note, since *HPGL doesn't direcly support beziers*, they are implemented as a series of `lineTo` commands using [adaptive-bezier-curve](https://www.npmjs.com/package/adaptive-bezier-curve).
+Please note, since *HPGL doesn't directly support beziers*, they are implemented as a series of `lineTo` commands using [adaptive-bezier-curve](https://www.npmjs.com/package/adaptive-bezier-curve).
 
 See also [d3-multi-context](https://www.npmjs.com/package/d3-multi-context) for rendering to multiple contexts.
 
@@ -29,6 +29,8 @@ console.log(context.toString()));
 
 Now code you write once can be used with any HPGL compatible device along with both Canvas (for performance) and SVG (for convenience). For a practical example of shapes you can create, see [d3-shape](https://github.com/d3/d3-shape).
 
+See (and try plotting) the [example.hpgl](https://github.com/aubergene/d3-hpgl/blob/master/examples/example.hpgl) and [example.svg](https://github.com/aubergene/d3-hpgl/blob/master/examples/example.svg) for reference.
+
 ## Installing
 
 If you use NPM, `npm install d3-hpgl`. Otherwise, download the [latest release](https://github.com/aubergene/d3-hpgl/releases/latest). AMD, CommonJS, and vanilla environments are supported. In vanilla, a `d3` global is exported:
@@ -39,6 +41,10 @@ path.moveTo(1, 2);
 path.lineTo(3, 4);
 path.closePath();
 ```
+
+## Coordinate System
+
+The plotting coordinate system is same as for Canvas. This means positive x goes right and positive y goes down. The actual HPGL which is output is reversed so if you read the HPGL which is output the Y axis coordinates and degree output for arcs will be inverted. You shouldn't need to think about this unless you're debugging the HPGL output.
 
 ## API Reference
 
