@@ -87,3 +87,8 @@ Creates a new subpath containing just the four points ⟨*x*, *y*⟩, ⟨*x* + *
 <a name="hpgl_toString" href="#hpgl_toString">#</a> <i>hpgl</i>.<b>toString</b>() [<>](https://github.com/aubergene/d3-hpgl/blob/master/src/hpgl.js "Source")
 
 Returns the string representation of this *path* in HPGL.
+
+## Contributors
+
+* [Julian Burgess](http://github.com/aubergene/)
+* [Brittany Harris](http://github.com/brittharr/)
