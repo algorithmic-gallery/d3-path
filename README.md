@@ -1,5 +1,9 @@
 ![d3-hpgle](https://thumbs.gfycat.com/MindlessWaterloggedAmethystsunbird-size_restricted.gif)
 
+# Deprecated!
+
+I now recommend [canvas-hpgl](https://github.com/aubergene/canvas-hpgl) alongside [canvas-polyline](https://github.com/aubergene/canvas-polyline) which matches the HTML Canvas API and produces HPGL.
+
 # d3-hpgl
 
 D3-hpgl is a adaptor with the same API as [d3-path](https://github.com/d3/d3-path) which outputs [HPGL](https://en.wikipedia.org/wiki/HPGL) which is used with pen plotters and other equipment.
